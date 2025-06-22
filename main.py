@@ -1,5 +1,3 @@
-#main
-
 from fastapi import FastAPI
 from models import Base
 from database import engine
