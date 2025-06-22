@@ -1,12 +1,8 @@
 #Schemas
-
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict
 from typing import Optional
 
-#AUTHENTICATION SCHEMA
-
-#request body for registeration
 class RegisterSchema(BaseModel):
     username: str
     password: str 
@@ -18,8 +14,6 @@ class LoginSchema(BaseModel):
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str ="bearer"
-
-#USER WALLET SCHEMA
 
 class WalletCreateSchema(BaseModel):
     initial_balance: Optional[float] = 0.0
