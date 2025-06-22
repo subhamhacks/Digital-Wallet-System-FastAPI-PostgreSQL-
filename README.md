@@ -8,7 +8,7 @@ This project supports wallet management, currency conversion, peer-to-peer trans
 
 A powerful and secure digital wallet system built with FastAPI and PostgreSQL.
 
-✨ **Visit the live application:** [Digital Wallet System](https://digital-wallet-system-fastapi-postgresql-orpe.onrender.com)
+✨ **Visit the live application:** [Digital Wallet System](https://digital-wallet-system-fastapi-postgresql-orpe.onrender.com/docs)
 
 ## 🚀 Features
 
