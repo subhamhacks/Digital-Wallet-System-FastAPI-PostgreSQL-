@@ -10,12 +10,11 @@ from jose import JWTError, jwt
 def hash_password(password: str)->str:
     return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
-#Check password on log-in (will be used in phase 2)
+#Check password on log-in 
 def verify_password(plain_password:str,hashed_password:str)->bool:
     return bcrypt.checkpw(plain_password.encode('utf-8'),hashed_password.encode('utf-8'))
 
-#PHASE 2: JWT Token Functions
-SECRET_KEY = "your_secret_key" #can use os.environ later for security
+SECRET_KEY = "your_secret_key" 
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 
