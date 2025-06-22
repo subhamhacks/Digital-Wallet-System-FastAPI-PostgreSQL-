@@ -16,7 +16,7 @@ class User(Base):
     balance = Column(Float, default=0.0) 
     wallet = relationship("Wallet", back_populates="user",uselist=False)
     transactions = relationship("Transaction", back_populates="user")
-
+#Wallet table
 class Wallet(Base):
     __tablename__="wallets"
 
@@ -25,7 +25,7 @@ class Wallet(Base):
     user_id = Column(Integer, ForeignKey("users.id"), unique=True)
 
     user = relationship("User", back_populates="wallet")
-
+#Transaction table
 class Transaction(Base):
     __tablename__ = "transactions"
 
@@ -38,7 +38,7 @@ class Transaction(Base):
     note = Column(String, nullable=True)
 
     user = relationship("User", back_populates="transactions")
-
+#Prod table
 class Product(Base):
     __tablename__="products"
 
