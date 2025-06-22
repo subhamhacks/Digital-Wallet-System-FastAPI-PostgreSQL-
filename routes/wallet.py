@@ -12,7 +12,7 @@ CURRENCY_API_KEY = os.getenv("CURRENCY_API_KEY")
 
 router = APIRouter()
 
-# Get current wallet balance (optionally in another currency)
+# Get current wallet balance (can be in another currency)
 @router.get("/wallet/balance", response_model=BalanceResponse)
 def get_balance(currency: str = None, current_user: User = Depends(get_current_user)):
     balance = current_user.wallet.balance
@@ -55,7 +55,7 @@ def deposit(
     db.commit()
     db.refresh(current_user.wallet)
 
-    # Log transaction
+    # transaction log
     txn = Transaction(
         user_id=current_user.id,
         kind="credit",
